@@ -1,0 +1,18 @@
+<ion-app>
+  <ion-button (click)="createTodo()">Add Data</ion-button>
+  <ion-list>
+    <ion-item *ngFor="let item of todos">
+      <p>{{item.name}} - {{item.description}}</p>
+    </ion-item>
+  </ion-list>
+</ion-app>
+<amplify-authenticator>
+  <ng-template
+    amplifySlot="authenticated"
+    let-user="user"
+    let-signOut="signOut"
+  >
+    <h1>Welcome {{ user.username }}!</h1>
+    <button (click)="signOut()">Sign Out</button>
+  </ng-template>
+</amplify-authenticator>
